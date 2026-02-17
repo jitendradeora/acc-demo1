@@ -4,13 +4,18 @@ import { SEO } from '../components/SEO';
 import { SectionTitle } from '../components/SectionTitle';
 import { Clock, Calendar } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import newsone from '@/assets/news-1.jpg';
+import newstwo from '@/assets/news-2.jpg';
+import newsthree from '@/assets/news-3.jpg';
+import newsfour from '@/assets/news-4.jpg';
+import newsfive from '@/assets/news-5.jpg';
 
 const milestones = [
-  { year: '2025', title: 'التأسيس والبداية', description: 'تأسس النادي الثقافي العربي في الشارقة كأول نادٍ ثقافي يجمع المثقفين العرب في دولة الإمارات العربية المتحدة.', image: 'src/assets/news-1.jpg?q=80&w=600' },
-  { year: '2020', title: 'المقر الجديد', description: 'الافتتاح الرسمي للمقر الدائم للنادي في منطقة الآبار، ليكون مركزاً متكاملاً للأنشطة الثقافية والأدبية.', image: 'src/assets/news-2.jpg?q=80&w=600' },
-  { year: '2015', title: 'إطلاق مهرجان الشارقة للشعر', description: 'بداية تنظيم المهرجانات الشعرية الكبرى التي استضافت شعراء من كافة أنحاء الوطن العربي.', image: 'src/assets/news-3.jpg?q=80&w=600' },
-  { year: '2010', title: 'جائزة الشارقة للإبداع العربي', description: 'توسع دور النادي في دعم الجوائز الثقافية التي ترعاها دائرة الثقافة بالشارقة.', image: 'src/assets/news-4.jpg?q=80&w=600' },
-  { year: '2005', title: 'اليوبيل الأربعيني', description: 'الاحتفال بمرور 40 عاماً على تأسيس النادي، وتدشين الأرشيف الرقمي للثقافة العربية.', image: 'src/assets/news-5.jpg?q=80&w=600' },
+  { year: '2025', title: 'التأسيس والبداية', description: 'تأسس النادي الثقافي العربي في الشارقة كأول نادٍ ثقافي يجمع المثقفين العرب في دولة الإمارات العربية المتحدة.', image: newsone },
+  { year: '2020', title: 'المقر الجديد', description: 'الافتتاح الرسمي للمقر الدائم للنادي في منطقة الآبار، ليكون مركزاً متكاملاً للأنشطة الثقافية والأدبية.', image: newstwo },
+  { year: '2015', title: 'إطلاق مهرجان الشارقة للشعر', description: 'بداية تنظيم المهرجانات الشعرية الكبرى التي استضافت شعراء من كافة أنحاء الوطن العربي.', image: newsthree },
+  { year: '2010', title: 'جائزة الشارقة للإبداع العربي', description: 'توسع دور النادي في دعم الجوائز الثقافية التي ترعاها دائرة الثقافة بالشارقة.', image: newsfour },
+  { year: '2005', title: 'اليوبيل الأربعيني', description: 'الاحتفال بمرور 40 عاماً على تأسيس النادي، وتدشين الأرشيف الرقمي للثقافة العربية.', image: newsfive },
 ];
 
 export const History = () => {

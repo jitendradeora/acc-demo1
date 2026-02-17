@@ -4,16 +4,19 @@ import { SEO } from '../components/SEO';
 import { SectionTitle } from '../components/SectionTitle';
 import { EventCard } from '../components/Cards';
 import { Search, Filter } from 'lucide-react';
+import eventone from '@/assets/event-1-u.jpg';
+import eventtwo from '@/assets/event-2-u.jpg';
+import eventthree from '@/assets/event-3-u.jpg';
 
 const categories = ['الكل', 'أدب وشعر', 'ورش فنية', 'ندوات', 'مسرح', 'ثقافة الطفل'];
 
 const events = [
-  { id: 1, title: 'أمسية شعرية: نبض الحروف في حب الشارقة', date: '25 فبراير 2026', location: 'قاعة المحاضرات الكبرى', category: 'أدب وشعر', image: 'src/assets/event-1-u.jpg' },
-  { id: 2, title: 'ورشة عمل: فن الخط العربي والزخرفة الإسلامية', date: '2 مارس 2026', location: 'مرسم النادي', category: 'ورش فنية', image: 'src/assets/event-2-u.jpg' },
-  { id: 3, title: 'ندوة فكرية: الهوية الثقافية العربية في عصر الذكاء الاصطناعي', date: '10 مارس 2026', location: 'المكتبة الرقمية', category: 'ندوات', image: 'src/assets/event-3-u.jpg' },
-  { id: 4, title: 'ملتقى القصة القصيرة: أصوات إبداعية جديدة', date: '15 مارس 2026', location: 'قاعة الاجتماعات', category: 'أدب وشعر', image: 'src/assets/event-3-u.jpg' },
-  { id: 5, title: 'مسرحية "أحلام المدينة": عرض خاص للأعضاء', date: '20 مارس 2026', location: 'مسرح النادي', category: 'مسرح', image: 'src/assets/event-2-u.jpg' },
-  { id: 6, title: 'يوم القراءة: مسابقات وجوائز للأطفال', date: '28 مارس 2026', location: 'حديقة النادي', category: 'ثقافة الطفل', image: 'src/assets/event-1-u.jpg' },
+  { id: 1, title: 'أمسية شعرية: نبض الحروف في حب الشارقة', date: '25 فبراير 2026', location: 'قاعة المحاضرات الكبرى', category: 'أدب وشعر', image: eventone },
+  { id: 2, title: 'ورشة عمل: فن الخط العربي والزخرفة الإسلامية', date: '2 مارس 2026', location: 'مرسم النادي', category: 'ورش فنية', image: eventtwo },
+  { id: 3, title: 'ندوة فكرية: الهوية الثقافية العربية في عصر الذكاء الاصطناعي', date: '10 مارس 2026', location: 'المكتبة الرقمية', category: 'ندوات', image: eventthree },
+  { id: 4, title: 'ملتقى القصة القصيرة: أصوات إبداعية جديدة', date: '15 مارس 2026', location: 'قاعة الاجتماعات', category: 'أدب وشعر', image: eventthree },
+  { id: 5, title: 'مسرحية "أحلام المدينة": عرض خاص للأعضاء', date: '20 مارس 2026', location: 'مسرح النادي', category: 'مسرح', image: eventtwo },  
+  { id: 6, title: 'يوم القراءة: مسابقات وجوائز للأطفال', date: '28 مارس 2026', location: 'حديقة النادي', category: 'ثقافة الطفل', image: eventone },
 ];
 
 export const Events = () => {

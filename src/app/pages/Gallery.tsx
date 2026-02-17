@@ -5,14 +5,20 @@ import { SectionTitle } from '../components/SectionTitle';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Maximize2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import newsone from '@/assets/news-1.jpg';
+import newstwo from '@/assets/news-2.jpg';
+import newsthree from '@/assets/news-3.jpg';
+import newsfour from '@/assets/news-4.jpg';
+import newsfive from '@/assets/news-5.jpg';
+import newssix from '@/assets/news-6.jpg';
 
 const galleryImages = [
-  { id: 1, src: 'src/assets/news-1.jpg?q=80&w=800', category: 'فعاليات', title: 'مقر النادي' },
-  { id: 2, src: 'src/assets/news-2.jpg?q=80&w=800', category: 'ورش', title: 'ورشة الخط' },
-  { id: 3, src: 'src/assets/news-3.jpg?q=80&w=800', category: 'أطفال', title: 'المبدع الصغير' },
-  { id: 4, src: 'src/assets/news-4.jpg?q=80&w=800', category: 'فعاليات', title: 'ندوة فكرية' },
-  { id: 5, src: 'src/assets/news-5.jpg?q=80&w=800', category: 'فن', title: 'معرض تشكيلي' },
-  { id: 6, src: 'src/assets/news-6.jpg?q=80&w=800', category: 'أدب', title: 'أمسية شعرية' },
+  { id: 1, src: newsone, category: 'فعاليات', title: 'مقر النادي' },
+  { id: 2, src: newstwo, category: 'ورش', title: 'ورشة الخط' },
+  { id: 3, src: newsthree, category: 'أطفال', title: 'المبدع الصغير' },
+  { id: 4, src: newsfour, category: 'فعاليات', title: 'ندوة فكرية' },
+  { id: 5, src: newsfive, category: 'فن', title: 'معرض تشكيلي' },
+  { id: 6, src: newssix, category: 'أدب', title: 'أمسية شعرية' },
 
 ];
 
@@ -87,7 +93,7 @@ export const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-sm flex items-center justify-center p-1"
             onClick={() => setSelectedImage(null)}
           >
             <button 
@@ -97,9 +103,9 @@ export const Gallery = () => {
               <X size={32} />
             </button>
             <motion.div 
-              initial={{ scale: 0.9 }}
+              initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
-              className="max-w-5xl w-full max-h-[80vh]"
+              className="max-w-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
               <ImageWithFallback 
@@ -107,7 +113,7 @@ export const Gallery = () => {
                 alt={selectedImage.title} 
                 className="w-full h-full object-contain rounded-2xl shadow-2xl"
               />
-              <div className="mt-6 text-white text-center">
+              <div className="mt-6 text-white text-center absolute bottom-0 left-0 right-0 bg-black/80 p-4">
                 <h3 className="text-2xl font-bold">{selectedImage.title}</h3>
                 <p className="text-white/60 mt-2">{selectedImage.category}</p>
               </div>

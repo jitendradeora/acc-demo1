@@ -9,7 +9,16 @@ import { SEO } from '../components/SEO';
 import banner from '@/assets/acc-banner-3.jpg';
 import smallbanner from '@/assets/acc-banner.jpg';
 import aboutbanner from '@/assets/acc-banner-1.jpg';
-import about from '@/assets/about-banner.jpg';
+//import about from '@/assets/about-banner.jpg';
+import newsone from '@/assets/news-1.jpg';
+import newstwo from '@/assets/news-2.jpg';
+import newsthree from '@/assets/news-3.jpg';
+import newsfour from '@/assets/news-4.jpg';
+import newsfive from '@/assets/news-5.jpg';
+import newssix from '@/assets/news-6.jpg';
+import eventone from '@/assets/event-1-u.jpg';
+import eventtwo from '@/assets/event-2-u.jpg';
+import eventthree from '@/assets/event-3-u.jpg';
 
 const eventsData = [
   {
@@ -18,7 +27,7 @@ const eventsData = [
     date: '25 فبراير 2026',
     location: 'قاعة المحاضرات الكبرى',
     category: 'أدب وشعر',
-    image: 'src/assets/event-1-u.jpg',
+    image: eventone,
   },
   {
     id: 2,
@@ -26,7 +35,7 @@ const eventsData = [
     date: '2 مارس 2026',
     location: 'مرسم النادي',
     category: 'ورش فنية',
-    image: 'src/assets/event-2-u.jpg'
+    image: eventtwo,
   },
   {
     id: 3,
@@ -34,7 +43,7 @@ const eventsData = [
     date: '10 مارس 2026',
     location: 'المكتبة الرقمية',
     category: 'ندوات',
-    image: 'src/assets/event-3-u.jpg'
+    image: eventthree,
   }
 ];
 
@@ -45,7 +54,7 @@ const newsData = [
     excerpt: 'في خطوة تهدف لتعزيز المواهب الشابة، أعلن النادي عن إطلاق سلسلة من الورش التخصصية الموجهة للأطفال واليافعين في مجالات الأدب والفنون...',
     date: '12 فبراير 2026',
     category: 'أخبار النادي',
-    image: 'src/assets/news-1.jpg?q=80&w=800'
+    image: newsone
   },
   {
     id: 2,
@@ -53,7 +62,7 @@ const newsData = [
     excerpt: 'استقبل النادي الثقافي العربي وفداً رفيع المستوى لبحث سبل التعاون الثقافي المشترك وتبادل الخبرات في تنظيم المهرجانات الأدبية والأنشطة المجتمعية...',
     date: '10 فبراير 2026',
     category: 'زيارات',
-    image: 'src/assets/news-2.jpg?q=80&w=800'
+    image: newstwo
   },
   {
     id: 3,
@@ -61,7 +70,7 @@ const newsData = [
     excerpt: 'في خطوة تهدف لتعزيز المواهب الشابة، أعلن النادي عن إطلاق سلسلة من الورش التخصصية الموجهة للأطفال واليافعين في مجالات الأدب والفنون...',
     date: '12 فبراير 2026',
     category: 'أخبار النادي',
-    image: 'src/assets/news-3.jpg?q=80&w=800'
+    image: newsthree
   },
   {
     id: 4,
@@ -69,7 +78,7 @@ const newsData = [
     excerpt: 'استقبل النادي الثقافي العربي وفداً رفيع المستوى لبحث سبل التعاون الثقافي المشترك وتبادل الخبرات في تنظيم المهرجانات الأدبية والأنشطة المجتمعية...',
     date: '10 فبراير 2026',
     category: 'زيارات',
-    image: 'src/assets/news-4.jpg?q=80&w=800'
+    image: newsfour
   },
   {
     id: 5,
@@ -77,7 +86,7 @@ const newsData = [
     excerpt: 'في خطوة تهدف لتعزيز المواهب الشابة، أعلن النادي عن إطلاق سلسلة من الورش التخصصية الموجهة للأطفال واليافعين في مجالات الأدب والفنون...',
     date: '12 فبراير 2026',
     category: 'أخبار النادي',
-    image: 'src/assets/news-5.jpg?q=80&w=800'
+    image: newsfive
   },
   {
     id: 6,
@@ -85,7 +94,7 @@ const newsData = [
     excerpt: 'استقبل النادي الثقافي العربي وفداً رفيع المستوى لبحث سبل التعاون الثقافي المشترك وتبادل الخبرات في تنظيم المهرجانات الأدبية والأنشطة المجتمعية...',
     date: '10 فبراير 2026',
     category: 'زيارات',
-    image: 'src/assets/news-6.jpg?q=80&w=800'
+    image: newssix
   }
 ];
 
