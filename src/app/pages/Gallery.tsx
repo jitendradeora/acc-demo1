@@ -1,0 +1,120 @@
+import React, { useState } from 'react';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { SEO } from '../components/SEO';
+import { SectionTitle } from '../components/SectionTitle';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { Maximize2, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+
+const galleryImages = [
+  { id: 1, src: 'src/assets/news-1.jpg?q=80&w=800', category: 'فعاليات', title: 'مقر النادي' },
+  { id: 2, src: 'src/assets/news-2.jpg?q=80&w=800', category: 'ورش', title: 'ورشة الخط' },
+  { id: 3, src: 'src/assets/news-3.jpg?q=80&w=800', category: 'أطفال', title: 'المبدع الصغير' },
+  { id: 4, src: 'src/assets/news-4.jpg?q=80&w=800', category: 'فعاليات', title: 'ندوة فكرية' },
+  { id: 5, src: 'src/assets/news-5.jpg?q=80&w=800', category: 'فن', title: 'معرض تشكيلي' },
+  { id: 6, src: 'src/assets/news-6.jpg?q=80&w=800', category: 'أدب', title: 'أمسية شعرية' },
+
+];
+
+export const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState('الكل');
+
+  const tabs = ['الكل', 'فعاليات', 'ورش', 'أطفال', 'فن'];
+
+  const filteredImages = activeTab === 'الكل' 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === activeTab);
+
+  return (
+    <div className="pt-30 pb-30">
+      <SEO title="معرض الصور" description="جولة بصرية في رحاب النادي الثقافي العربي بالشارقة." />
+      
+      <div className="container mx-auto px-4 md:px-6">
+        <SectionTitle title="معرض الصور" subtitle="لحظات توثق حراكنا الثقافي وجماليات الإبداع في نادينا." centered />
+
+        {/* Filter Tabs */}
+        <div className="flex justify-center flex-wrap gap-4 mb-16 mt-8">
+          {tabs.map(tab => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-8 py-2 rounded-full font-bold transition-all ${
+                activeTab === tab 
+                ? 'bg-club-purple text-white shadow-lg' 
+                : 'bg-white text-muted-foreground border border-border hover:border-club-purple'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Masonry Grid */}
+        <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 1100: 3}}>
+          <Masonry gutter="24px">
+            {filteredImages.map((img) => (
+              <motion.div 
+                layout
+                key={img.id}
+                className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-sm"
+                onClick={() => setSelectedImage(img)}
+              >
+                <ImageWithFallback 
+                  src={img.src} 
+                  alt={img.title} 
+                  className="w-full h-auto block transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+                   <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+                      <Maximize2 size={24} />
+                   </div>
+                   <div className="text-white text-center">
+                      <p className="font-bold text-lg">{img.title}</p>
+                      <span className="text-sm opacity-80">{img.category}</span>
+                   </div>
+                </div>
+              </motion.div>
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button 
+              className="absolute top-8 right-8 text-white p-2 hover:bg-white/10 rounded-full transition-all"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X size={32} />
+            </button>
+            <motion.div 
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              className="max-w-5xl w-full max-h-[80vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ImageWithFallback 
+                src={selectedImage.src} 
+                alt={selectedImage.title} 
+                className="w-full h-full object-contain rounded-2xl shadow-2xl"
+              />
+              <div className="mt-6 text-white text-center">
+                <h3 className="text-2xl font-bold">{selectedImage.title}</h3>
+                <p className="text-white/60 mt-2">{selectedImage.category}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};

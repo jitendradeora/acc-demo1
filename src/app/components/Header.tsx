@@ -1,0 +1,232 @@
+import React, { useState, useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router';
+import { Menu, X, Globe, Search, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import logo from '@/assets/logo-dark.svg';
+
+export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { title: 'الرئيسية', path: '/' },
+    { title: 'نبذة عنا', path: '/about' },
+    { title: 'تاريخ النادي', path: '/history' },
+    { title: 'الفعاليات', path: '/events' },
+    { title: 'الأخبار', path: '/news' },
+    { title: 'ثقافة الشارقة', path: '/sharjah-culture' },
+    { title: 'معرض الصور', path: '/gallery' },
+    { title: 'اتصل بنا', path: '/contact' },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: '#', color: 'hover:text-[#1877F2]' },
+    { icon: Twitter, href: '#', color: 'hover:text-[#1DA1F2]' },
+    { icon: Instagram, href: '#', color: 'hover:text-[#E4405F]' },
+    { icon: Youtube, href: '#', color: 'hover:text-[#FF0000]' },
+  ];
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  return (
+    <>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-md py-4 h-20 flex items-center"
+      >
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between w-full">
+          {/* Logo */}
+          <NavLink to="/" className="flex items-center gap-2 group w-[110px]">
+             <img src={logo} alt="Logo" className="w-full h-full" />              
+          </NavLink>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) => 
+                  `text-sm font-semibold transition-all duration-300 hover:scale-105 text-black hover:text-club-purple ${
+                    isActive ? 'underline decoration-2 underline-offset-8' : ''
+                  }`
+                }
+              >
+                {link.title}
+              </NavLink>
+            ))}
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 transition-colors cursor-pointer text-black hover:text-club-purple"
+            >
+              <Search size={20} />
+            </button>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center gap-4">
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 cursor-pointer text-black"
+            >
+              <Search size={20} />
+            </button>
+            <button 
+              className="p-2 cursor-pointer text-black"
+              onClick={() => setIsOpen(true)}
+            >
+              <Menu size={28} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Nav Drawer (Left to Right) */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
+            />
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 left-0 bottom-0 w-[80%] max-w-sm bg-background z-[70] shadow-2xl flex flex-col"
+            >
+              <div className="p-6 flex items-center justify-between border-b border-border">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-club-purple rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    ن
+                  </div>
+                  <span className="text-primary font-bold">النادي الثقافي العربي</span>
+                </div>
+                <button onClick={() => setIsOpen(false)} className="p-2 text-primary">
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="flex-grow overflow-y-auto p-6">
+                <nav className="flex flex-col gap-2">
+                  {navLinks.map((link) => (
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) => 
+                        `text-lg font-bold py-3 flex items-center justify-between transition-colors ${
+                          isActive ? 'text-club-purple' : 'text-primary hover:text-club-purple'
+                        }`
+                      }
+                    >
+                      <span>{link.title}</span>
+                      <motion.div 
+                        animate={{ x: [0, -5, 0] }} 
+                        transition={{ repeat: Infinity, duration: 2 }}
+                        className="text-club-blue"
+                      >
+                        <Globe size={16} />
+                      </motion.div>
+                    </NavLink>
+                  ))}
+                </nav>
+              </div>
+
+              <div className="p-8 border-t border-border bg-secondary/20">
+                <p className="text-sm text-muted-foreground mb-6 font-bold text-center">تابعونا على منصات التواصل</p>
+                <div className="flex justify-center gap-6">
+                  {socialLinks.map((social, i) => (
+                    <a 
+                      key={i} 
+                      href={social.href} 
+                      className={`text-muted-foreground transition-all transform hover:scale-125 ${social.color}`}
+                    >
+                      <social.icon size={24} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Search Popup */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-primary/95 backdrop-blur-xl z-[100] flex items-center justify-center p-4"
+          >
+            <button 
+              onClick={() => setIsSearchOpen(false)}
+              className="absolute top-8 left-8 text-white/50 hover:text-white transition-colors"
+            >
+              <X size={40} />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="w-full max-w-4xl"
+            >
+              <form onSubmit={handleSearchSubmit} className="relative">
+                <input 
+                  autoFocus
+                  type="text" 
+                  placeholder="ما الذي تبحث عنه؟..." 
+                  className="w-full bg-transparent border-b-4 border-white/20 pb-4 text-3xl md:text-5xl font-black text-white placeholder:text-white/20 focus:outline-none focus:border-club-purple transition-all"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button type="submit" className="absolute left-0 top-0 h-full flex items-center text-white/50 hover:text-club-purple transition-colors">
+                  <Search size={40} />
+                </button>
+              </form>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <span className="text-white/50 text-sm font-bold ml-4">عمليات بحث شائعة:</span>
+                {['الشارقة', 'أمسية شعرية', 'الخط العربي', 'فعاليات 2026', 'سلطان القاسمي'].map(tag => (
+                  <button 
+                    key={tag}
+                    onClick={() => {
+                      setSearchQuery(tag);
+                      navigate(`/search?q=${tag}`);
+                      setIsSearchOpen(false);
+                    }}
+                    className="text-white/80 text-sm hover:text-club-blue hover:underline"
+                  >
+                    #{tag}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
