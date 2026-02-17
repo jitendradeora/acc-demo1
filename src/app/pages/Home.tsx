@@ -177,8 +177,8 @@ export const Home = () => {
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback src={aboutbanner}  alt="Sharjah Culture" className="w-full h-[500px] object-cover" />
             </div>
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-club-blue/20 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -top-10 -left-10 w-48 h-48 bg-club-purple/20 rounded-full blur-3xl -z-10"></div>
+            {/* <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-club-blue/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -top-10 -left-10 w-48 h-48 bg-club-purple/20 rounded-full blur-3xl -z-10"></div> */}
           </div>
           <div className="lg:w-1/2">
             <SectionTitle 

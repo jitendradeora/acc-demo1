@@ -118,10 +118,8 @@ export const Header = () => {
             >
               <div className="p-6 flex items-center justify-between border-b border-border">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-club-purple rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    ن
-                  </div>
-                  <span className="text-primary font-bold">النادي الثقافي العربي</span>
+                
+                  <span className="text-primary font-bold">  النادي الثقافي العربي في الشارقة  </span>
                 </div>
                 <button onClick={() => setIsOpen(false)} className="p-2 text-primary">
                   <X size={24} />
