@@ -21,21 +21,20 @@ const values = [
 
 export const About = () => {
   return (
-    <div className="pt-20 pb-20">
+    <div className="pt-25 pb-25">
       <SEO title="نبذة عنا" description="تعرف على رسالة ورؤية وأهداف النادي الثقافي العربي في الشارقة." />
       
       {/* Hero Banner */}
-      <div className="bg-primary text-white py-20 mb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-black mb-6">من نحن</h1>
-          <p className="text-xl text-secondary/70 max-w-2xl leading-relaxed">
+      <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white">
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">من نحن</h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
             النادي الثقافي العربي في الشارقة هو بيت المبدعين ومنارة الفكر، تأسس ليكون جسراً يربط بين عراقة الماضي وإبداع المستقبل.
           </p>
-        </div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-club-purple/20 skew-x-12 transform origin-top"></div>
+        </div>        
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         {/* Mission & Vision */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
           <motion.div 

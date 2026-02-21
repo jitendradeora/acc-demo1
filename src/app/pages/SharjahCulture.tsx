@@ -6,21 +6,23 @@ import { Book, Award, Globe, Music } from 'lucide-react';
 
 export const SharjahCulture = () => {
   return (
-    <div className="pt-20 pb-20">
+    <div className="pt-25 pb-25">
       <SEO title="ثقافة الشارقة" description="اكتشف الهوية الثقافية لشارقة العلم والمعرفة." />
       
-      {/* Visual Header */}
-      <div className="relative h-[60vh] min-h-[400px] overflow-hidden mb-20">
-        <ImageWithFallback src="https://images.unsplash.com/photo-1611479853417-80d5b7869ddf?q=80&w=2000" alt="Sharjah Skyline" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end pb-20">
-          <div className="container mx-auto px-4 md:px-6">
-             <h1 className="text-5xl md:text-7xl font-black text-white mb-4">الشارقة..</h1>
-             <p className="text-2xl md:text-3xl text-club-blue font-bold">بين عراقة التراث وحداثة الفكر</p>
-          </div>
-        </div>
+     
+
+       <div className="bg-primary text-white py-10 mb-10 relative overflow-hidden text-center">
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">  الشارقة..  </h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+            بين عراقة التراث وحداثة الفكر
+          </p>
+        </div>        
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
+
+
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-8">
             <h2 className="text-4xl font-black mb-8 border-r-8 border-club-purple pr-6">المشروع الثقافي للشارقة</h2>

@@ -7,15 +7,13 @@ export const Footer = () => {
 
   return (
     <footer className="bg-primary text-secondary pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-2">
-               
+            <div className="flex items-center gap-2">               
               <div className="flex flex-col">
-                <span className="font-bold text-xl leading-tight"> النادي الثقافي العربي في الشارقة </span>
-                
+                <span className="font-bold text-xl leading-tight"> النادي الثقافي العربي في الشارقة </span>                
               </div>
             </div>
             <p className="text-secondary/70 leading-relaxed text-sm">
@@ -49,6 +47,17 @@ export const Footer = () => {
             </ul>
           </div>
 
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 border-r-4 border-club-purple pr-4"> النشرة الثقافية </h3>
+            <ul className="flex flex-col gap-4 text-secondary/70 text-sm">
+              <li><NavLink to="/" className="hover:text-club-blue transition-colors"> مهرجان الشارقة القرائي  </NavLink></li>
+              <li><NavLink to="/" className="hover:text-club-blue transition-colors"> أيام الشارقة التراثية </NavLink></li>
+              <li><NavLink to="/" className="hover:text-club-blue transition-colors"> بينالي الشارقة </NavLink></li>
+              <li><NavLink to="/" className="hover:text-club-blue transition-colors">  معرض الشارقة الدولي للكتاب </NavLink></li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-r-4 border-club-blue pr-4">معلومات الاتصال</h3>
@@ -68,21 +77,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 border-r-4 border-club-purple pr-4">النشرة البريدية</h3>
-            <p className="text-secondary/70 text-sm mb-4">اشترك لتصلك آخر أخبار وفعاليات النادي الثقافي العربي.</p>
-            <form className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="البريد الإلكتروني" 
-                className="bg-secondary/10 border border-secondary/20 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-club-purple"
-              />
-              <button className="bg-club-purple hover:bg-opacity-90 transition-all text-white font-bold py-2 rounded-lg text-sm">
-                اشتراك
-              </button>
-            </form>
-          </div>
+         
         </div>
 
         <div className="border-t border-secondary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary/50">

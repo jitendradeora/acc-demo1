@@ -22,12 +22,21 @@ export const Contact = () => {
   };
 
   return (
-    <div className="pt-30 pb-30">
+    <div className="pt-25 pb-25">
       <SEO title="اتصل بنا" description="تواصل مع النادي الثقافي العربي في الشارقة." />
-      
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle title="تواصل معنا" subtitle="نحن هنا للإجابة على استفساراتكم واقتراحاتكم." centered />
 
+        <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white"> 
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
+          
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white"> تواصل معنا </h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+            نحن هنا للإجابة على استفساراتكم واقتراحاتكم.
+          </p>
+        </div>
+      </div>
+      
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
+         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-16">
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-6">

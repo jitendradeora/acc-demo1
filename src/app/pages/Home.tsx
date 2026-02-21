@@ -100,25 +100,32 @@ const newsData = [
 
 export const Home = () => {
   return (
-    <div className="flex flex-col gap-24 pb-24">
+    <div className="flex flex-col">
       <SEO 
         title="الرئيسية" 
         description="الموقع الرسمي للد الثقافي العربي في الشارقة - منارة الثقافة والأدب والإبداع العربي."
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden bg-secondary">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <ImageWithFallback 
             src={banner} 
             alt="Hero Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover grayscale"
           />
           {/* Bottom to top shadow */}
-          <div className="absolute inset-0 bg-gradient-to-l from-black/90"></div>
+          {/* <div className="absolute inset-0 bg-gradient-to-l from-black/90"></div> */}
+          <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-accent-purple/10 to-transparent z-0" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-accent-blue/10 rounded-full blur-[120px] z-0" />
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white/50 to-transparent z-0" />
         </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-white">
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] pointer-events-none rotate-12 z-0">
+        {/* <img src={logo} alt="" className="w-full h-full object-contain" /> */}
+      </div>
+
+        <div className="container relative z-10">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -153,7 +160,7 @@ export const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="container mx-auto px-4 md:px-6">
+      {/* <section className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="bg-white rounded-3xl p-10 shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-8 -mt-32 relative z-20 border border-border">
           {[
             { label: 'فعالية سنوية', value: '+120', icon: Star, color: 'text-club-purple' },
@@ -168,10 +175,11 @@ export const Home = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* About Preview */}
-      <section className="container mx-auto px-4 md:px-6">
+      <section className="bg-white py-24 md:px-6 ">
+      <div className="container max-w-7xl mx-auto ">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 relative">
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
@@ -181,6 +189,7 @@ export const Home = () => {
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-club-purple/20 rounded-full blur-3xl -z-10"></div> */}
           </div>
           <div className="lg:w-1/2">
+           
             <SectionTitle 
               title="رسالة النادي ورؤيته" 
               subtitle="نسعى لأن نكون المظلة الجامعة للمثقفين والمبدعين العرب، ومنصة انطلاق للمبادرات الثقافية التي تعزز قيم الانتماء والوعي."
@@ -206,11 +215,11 @@ export const Home = () => {
             </button>
           </div>
         </div>
+      </div>
       </section>
-
       {/* Latest Events */}
       <section className="bg-secondary/30 py-24">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex justify-between items-end mb-12">
             <SectionTitle title="فعالياتنا القادمة" />
             <button className="hidden md:flex items-center gap-2 text-club-purple font-bold border-b-2 border-club-purple pb-1 mb-12">
@@ -236,7 +245,7 @@ export const Home = () => {
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
            <ImageWithFallback src="https://images.unsplash.com/photo-1764594021930-6930410949b9?q=80&w=1000" alt="Pattern" className="w-[800px]" />
         </div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">الشارقة: عاصمة عالمية للثقافة والكتاب</h2>
             <p className="text-xl text-secondary/70 mb-12 leading-relaxed">
@@ -261,7 +270,7 @@ export const Home = () => {
       </section>
 
       {/* Latest News */}
-      <section className="container mx-auto px-4 md:px-6">
+      <section className="container max-w-7xl mx-auto px-4 md:px-6 py-24">
         <div className="flex justify-between items-end mb-12">
           <SectionTitle title="آخر الأخبار والتقارير" />
           <Link to="/news" className="hidden md:flex items-center gap-2 text-club-purple font-bold border-b-2 border-club-purple pb-1">
@@ -281,30 +290,29 @@ export const Home = () => {
         </div>
       </section>
 
+
+      
+<section className="bg-club-purple p-12 md:p-20 px-4 md:px-6 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div className="absolute top-10 right-10 w-64 h-64 border-[40px] border-white rounded-full" />
+                <div className="absolute bottom-10 left-10 w-96 h-96 border-[60px] border-white rounded-full" />
+              </div>
+              <div className="container max-w-2xl mx-auto relative z-10 text-center text-white max-w-2xl">
+                <h2 className="text-4xl font-bold font-tajawal mb-6">ابقَ على اطلاع دائم</h2>
+                <p className="text-white/80 mb-10 text-lg">اشترك في نشرتنا البريدية لتصلك آخر أخبار الفعاليات والنشاطات الثقافية مباشرة إلى بريدك الإلكتروني.</p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input 
+                    type="email" 
+                    placeholder="بريدك الإلكتروني" 
+                    className="flex-1 bg-white/20 border border-white/30 px-6 py-4 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:bg-white/30"
+                  />
+                  <button className="bg-white text-club-purple px-10 py-4 rounded-xl font-bold hover:bg-white/90 transition-all">اشترك الآن</button>
+                </div>
+              </div>
+            </section>
    
 
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 md:px-6">
-        <div className="bg-club-purple rounded-[3rem] p-12 md:p-20 text-white flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">كن جزءاً من حراكنا الثقافي</h2>
-            <p className="text-xl text-white/80 mb-10 max-w-xl">
-              افتح آفاقاً جديدة لإبداعك، وتعر على نخبة من المثقفين والأدباء العرب. العضوية متاحة الآن.
-            </p>
-            <button className="bg-white text-club-purple px-10 py-4 rounded-2xl font-black text-lg hover:bg-secondary transition-all">
-              قدم طلب العضوية الآن
-            </button>
-          </div>
-          <div className="md:w-1/3 relative z-10">
-            <div className="bg-club-blue/20 p-8 rounded-full border border-white/20">
-               <BookOpen size={120} className="text-club-blue" />
-            </div>
-          </div>
-          {/* Decorative shapes */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-club-blue/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
-        </div>
-      </section>
+  
     </div>
   );
 };

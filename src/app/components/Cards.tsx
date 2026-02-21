@@ -25,11 +25,11 @@ export const EventCard = ({ event }: { event: any }) => (
       </h3>
       <div className="flex flex-col gap-3 text-muted-foreground text-sm mb-8">
         <div className="flex items-center gap-2">
-          <Calendar size={16} className="text-club-blue shrink-0" />
+          <Calendar size={16} className="text-club shrink-0" />
           <span>{event.date}</span>
         </div>
         <div className="flex items-center gap-2">
-          <MapPin size={16} className="text-club-blue shrink-0" />
+          <MapPin size={16} className="text-club shrink-0" />
           <span className="line-clamp-1">{event.location}</span>
         </div>
       </div>

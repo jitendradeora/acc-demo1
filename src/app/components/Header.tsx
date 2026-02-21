@@ -49,23 +49,26 @@ export const Header = () => {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-md py-4 h-20 flex items-center"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-4'}`}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between w-full">
-          {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-2 group w-[110px]">
+        <div className="container max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
+          
+
+          <div className="flex items-center cursor-pointer group">
+            <NavLink to="/" className="flex items-center gap-2 group w-[110px]">
              <img src={logo} alt="Logo" className="w-full h-full" />              
-          </NavLink>
+          </NavLink>           
+          </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center space-x-reverse space-x-1 gap-x-4">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) => 
-                  `text-sm font-semibold transition-all duration-300 hover:scale-105 text-black hover:text-club-purple ${
-                    isActive ? 'underline decoration-2 underline-offset-8' : ''
+                  `px-4 py-2 font-tajawal text-lg font-medium transition-all relative group overflow-hidden rounded-lg ${
+                    isActive ? 'text-accent-purple bg-accent-purple/5' : 'text-primary/70 hover:text-accent-purple hover:bg-white/50'
                   }`
                 }
               >

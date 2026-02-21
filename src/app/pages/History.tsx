@@ -20,20 +20,20 @@ const milestones = [
 
 export const History = () => {
   return (
-    <div className="pt-20 pb-20">
+    <div className="pt-25 pb-25">
       <SEO title="تاريخ النادي" description="رحلة النادي الثقافي العربي في الشارقة عبر العقود." />
       
-      <div className="bg-club-purple text-white py-20 mb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <Clock size={48} className="mx-auto mb-6 text-club-blue opacity-50" />
-          <h1 className="text-4xl md:text-6xl font-black mb-6">مسيرة من العطاء</h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+      <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white"> 
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
+          
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">مسيرة من العطاء</h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
             أكثر من أربعة عقود من الريادة الثقافية، نروي فيها قصة الإبداع التي بدأت من الشارقة ووصلت إلى كل بيت عربي.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="relative border-r-2 border-club-purple/20 pr-8 md:pr-0 md:border-r-0 max-w-5xl mx-auto">
           {/* Vertical line for desktop */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-club-purple/20 -translate-x-1/2 hidden md:block"></div>

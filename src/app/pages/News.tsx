@@ -32,29 +32,23 @@ export const News = () => {
   });
 
   return (
-    <div className="pt-20 pb-20">
+    <div className="pt-25 pb-25">
       <SEO title="أخبار النادي" description="تابع آخر الأخبار والتقارير والفعاليات في النادي الثقافي العربي بالشارقة." />
       
       {/* Hero Header */}
-      <div className="bg-primary text-white pt-40 pb-20 mb-16 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-black mb-6"
-          >
-            المركز الإعلامي
-          </motion.h1>
-          <p className="text-xl text-secondary/70 max-w-2xl leading-relaxed">
+     
+
+
+       <div className="bg-primary text-white py-10 mb-10 relative overflow-hidden text-center">
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">   المركز الإعلامي </h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
             نافذتكم على أنشطة النادي، وتقاريرنا الثقافية، وإصداراتنا الأدبية المتنوعة.
           </p>
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#8BCCEA_0%,transparent_50%)]"></div>
-        </div>
+        </div>        
       </div>
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         {/* Filters and Search */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12">
           <div className="flex flex-wrap gap-2">

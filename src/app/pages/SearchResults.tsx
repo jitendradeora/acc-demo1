@@ -23,10 +23,10 @@ export const SearchResults = () => {
   );
 
   return (
-    <div className="pt-30 pb-30 min-h-screen">
+    <div className="pt-25 pb-25">
       <SEO title={`نتائج البحث عن: ${query}`} description={`نتائج البحث عن ${query} في موقع النادي الثقافي العربي.`} />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="mb-12">
           <Link to="/" className="text-club-purple font-bold flex items-center gap-2 mb-6 hover:gap-3 transition-all">
             <ArrowRight size={18} />

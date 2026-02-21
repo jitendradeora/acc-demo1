@@ -5,7 +5,10 @@ import { Calendar, Tag, User, ArrowRight, ArrowLeft, Share2, Facebook, Twitter, 
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
 import { SectionTitle } from '../components/SectionTitle';
-import { NewsCard } from '../components/Cards';
+import { NewsCard } from '../components/Cards'
+import { ChevronRight } from 'lucide-react';
+
+
 
 // Mock data - in a real app this would come from an API
 const newsData = [
@@ -75,7 +78,15 @@ export const NewsDetail = () => {
         description={article.excerpt || "تفاصيل الخبر من النادي الثقافي العربي"}
       />
 
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
+         {/* Breadcrumbs */}
+              <div className="flex items-center space-x-reverse space-x-2 text-sm text-primary/40 mb-10 font-tajawal">
+                <button className="hover:text-accent-purple transition-colors" onClick={() => navigate('/')}>الرئيسية</button>
+                <ChevronRight size={14} />
+                <button className="hover:text-accent-purple transition-colors" onClick={() => navigate('/news')}>أخبار النادي</button>
+                <ChevronRight size={14} />
+                <span className="text-primary/70 truncate max-w-[200px]"> {article.title}</span>
+              </div>
         <div className="flex flex-col lg:flex-row gap-12">
           
           {/* Main Content */}
