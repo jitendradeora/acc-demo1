@@ -46,10 +46,10 @@ export const AuthorDetail = () => {
   const author = authorsData[id as keyof typeof authorsData] || authorsData['1'];
 
   return (
-    <div className="pt-30 pb-30 min-h-screen">
+    <div className="pt-25 pb-25 min-h-screen">
       <SEO title={author.name} description={author.bio} />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         {/* Profile Header */}
         <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-border mb-16 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-32 bg-club-purple/5 -z-10"></div>
@@ -66,7 +66,7 @@ export const AuthorDetail = () => {
             <div className="flex-grow text-center md:text-right">
               <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 mb-6">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-black mb-2">{author.name}</h1>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-2">{author.name}</h1>
                   <div className="text-club-purple text-xl font-bold">{author.role}</div>
                 </div>
                 <div className="flex gap-4">
@@ -85,15 +85,15 @@ export const AuthorDetail = () => {
               
               <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm font-bold text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <MapPin size={18} className="text-club-blue" />
+                  <MapPin size={18} className="text-club" />
                   <span>الشارقة، الإمارات</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe size={18} className="text-club-blue" />
+                  <Globe size={18} className="text-club" />
                   <span>عضو النادي الثقافي العربي</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <BookOpen size={18} className="text-club-blue" />
+                  <BookOpen size={18} className="text-club" />
                   <span>{author.articles.length} مساهمة منشورة</span>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export const AuthorDetail = () => {
 
         {/* Author's Content */}
         <div>
-          <h2 className="text-3xl font-black mb-12 flex items-center gap-4">
+          <h2 className="text-3xl font-bold mb-12 flex items-center gap-4">
             <div className="w-2 h-10 bg-club-blue rounded-full"></div>
             مساهمات {author.name}
           </h2>

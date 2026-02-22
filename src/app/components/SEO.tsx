@@ -32,8 +32,8 @@ export const SEO: React.FC<SEOProps> = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "النادي الثقافي العربي في الشارقة",
-    "url": "https://arabclub-shj.ae",
-    "logo": "https://arabclub-shj.ae/logo.png",
+    "url": "https://shjarabclub.ae",
+    "logo": "https://shjarabclub.ae/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+971-6-567-2222",

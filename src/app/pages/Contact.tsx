@@ -25,11 +25,11 @@ export const Contact = () => {
     <div className="pt-25 pb-25">
       <SEO title="اتصل بنا" description="تواصل مع النادي الثقافي العربي في الشارقة." />
 
-        <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white"> 
+        <div className="py-10 mb-10 relative overflow-hidden text-center bg-secondary"> 
         <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
           
-          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white"> تواصل معنا </h1>
-          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-black"> تواصل معنا </h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed text-black">
             نحن هنا للإجابة على استفساراتكم واقتراحاتكم.
           </p>
         </div>
@@ -116,7 +116,7 @@ export const Contact = () => {
 
                 <button 
                   type="submit"
-                  className="w-full bg-club-purple hover:bg-opacity-90 transition-all text-white font-black text-lg py-5 rounded-xl shadow-xl shadow-club-purple/20 flex items-center justify-center gap-3"
+                  className="w-full bg-club-purple hover:bg-opacity-90 transition-all text-white font-bold text-lg py-5 rounded-xl shadow-xl shadow-club-purple/20 flex items-center justify-center gap-3"
                 >
                   <span>إرسال الرسالة</span>
                   <Send size={20} />

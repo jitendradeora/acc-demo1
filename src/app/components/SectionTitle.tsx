@@ -16,7 +16,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, cen
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-black mb-4 relative inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
           {title}
           <span className="absolute -bottom-2 right-0 w-16 h-1 bg-club-purple rounded-full"></span>
         </h2>

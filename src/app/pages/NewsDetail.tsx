@@ -1,12 +1,8 @@
-import React from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import { motion } from 'motion/react';
-import { Calendar, Tag, User, ArrowRight, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Clock, Bookmark } from 'lucide-react';
+import { Calendar, Tag, User, ArrowRight, ArrowLeft, Share2, Facebook, Twitter, Linkedin, Bookmark, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
-import { SectionTitle } from '../components/SectionTitle';
-import { NewsCard } from '../components/Cards'
-import { ChevronRight } from 'lucide-react';
 
 
 
@@ -67,6 +63,7 @@ const newsData = [
 
 export const NewsDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const article = newsData.find(item => item.id === Number(id)) || newsData[0];
   
   const relatedNews = newsData.filter(item => item.id !== article.id).slice(0, 2);
@@ -75,7 +72,7 @@ export const NewsDetail = () => {
     <div className="pb-30 pt-30 z-0 relative">
       <SEO 
         title={article.title} 
-        description={article.excerpt || "تفاصيل الخبر من النادي الثقافي العربي"}
+        description="تفاصيل الخبر من النادي الثقافي العربي"
       />
 
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
@@ -102,16 +99,16 @@ export const NewsDetail = () => {
                   {article.category}
                 </span>
                 <span className="text-muted-foreground text-sm flex items-center gap-2">
-                  <Calendar size={14} className="text-club-blue" />
+                  <Calendar size={14} className="text-club" />
                   {article.date}
                 </span>
                 <span className="text-muted-foreground text-sm flex items-center gap-2">
-                  <User size={14} className="text-club-blue" />
+                  <User size={14} className="text-club" />
                   {article.author}
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                 {article.title}
               </h1>
 
@@ -129,7 +126,7 @@ export const NewsDetail = () => {
               />
 
               {/* Author Section */}
-              <div className="mt-16 p-8 bg-secondary/30 rounded-[2rem] border border-border flex flex-col md:flex-row items-center gap-8">
+              <div className="mt-16 p-8 bg-white rounded-[2rem] border border-border flex flex-col md:flex-row items-center gap-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md">
                   <ImageWithFallback src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400" className="w-full h-full object-cover" />
                 </div>

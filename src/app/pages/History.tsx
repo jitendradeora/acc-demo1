@@ -23,11 +23,11 @@ export const History = () => {
     <div className="pt-25 pb-25">
       <SEO title="تاريخ النادي" description="رحلة النادي الثقافي العربي في الشارقة عبر العقود." />
       
-      <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white"> 
+      <div className="py-10 mb-10 relative overflow-hidden text-center bg-secondary"> 
         <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
           
-          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">مسيرة من العطاء</h1>
-          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-black">مسيرة من العطاء</h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed text-black">
             أكثر من أربعة عقود من الريادة الثقافية، نروي فيها قصة الإبداع التي بدأت من الشارقة ووصلت إلى كل بيت عربي.
           </p>
         </div>
@@ -58,7 +58,7 @@ export const History = () => {
                   <div className="h-48 rounded-2xl overflow-hidden mb-6">
                     <ImageWithFallback src={milestone.image} alt={milestone.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <h3 className="text-2xl font-black mb-4 group-hover:text-club-purple transition-colors">{milestone.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-club-purple transition-colors">{milestone.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export const History = () => {
 
         {/* Conclusion Section */}
         <div className="mt-20 text-center max-w-3xl mx-auto">
-           <h2 className="text-3xl font-black mb-8">وما زال العطاء مستمراً</h2>
+           <h2 className="text-3xl font-bold mb-8">وما زال العطاء مستمراً</h2>
            <p className="text-lg text-muted-foreground leading-relaxed">
              نحن اليوم نكتب فصولاً جديدة في تاريخ النادي، مستندين إلى إرثنا العريق وطموحاتنا التي لا تعرف الحدود في خدمة الثقافة العربية والإنسان.
            </p>

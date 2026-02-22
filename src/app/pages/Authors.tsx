@@ -37,16 +37,22 @@ const authors = [
 
 export const Authors = () => {
   return (
-    <div className="pt-30 pb-30">
+    <div className="pt-25 pb-25">
       <SEO title="كتابنا ومبدعونا" description="تعرف على نخبة من الكتاب والمبدعين المساهمين في إثراء المحتوى الثقافي للنادي." />
-      
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h1 className="text-4xl md:text-6xl font-black mb-6">أقلام النادي</h1>
-          <p className="text-xl text-muted-foreground">
+
+
+      <div className="py-10 mb-10 relative overflow-hidden text-center bg-secondary"> 
+        <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
+          
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-black"> أقلام النادي </h1>
+          <p className="text-x2 leading-relaxed text-black">
             نخبة من المثقفين والأدباء الذين يساهمون بأفكارهم وإبداعاتهم في إثراء منصتنا الثقافية.
           </p>
         </div>
+      </div>
+      
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
+         
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {authors.map((author, idx) => (
@@ -68,7 +74,7 @@ export const Authors = () => {
                 />
               </div>
 
-              <h2 className="text-2xl font-black mb-2 group-hover:text-club-purple transition-colors">{author.name}</h2>
+              <h2 className="text-2xl font-bold mb-2 group-hover:text-club-purple transition-colors">{author.name}</h2>
               <div className="text-club-blue font-bold text-sm mb-4">{author.role}</div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8 line-clamp-3">
                 {author.bio}
@@ -88,7 +94,7 @@ export const Authors = () => {
 
               <Link 
                 to={`/authors/${author.id}`}
-                className="inline-flex items-center gap-2 text-club-purple font-black group/link"
+                className="inline-flex items-center gap-2 text-club-purple font-bold group/link"
               >
                 <span>شاهد جميع المساهمات</span>
                 <ArrowLeft size={18} className="transition-transform group-hover/link:-translate-x-1" />

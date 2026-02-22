@@ -14,10 +14,10 @@ export const TagsResults = () => {
   const { tagName } = useParams();
 
   return (
-    <div className="pt-30 pb-30 min-h-screen">
+    <div className="pt-25 pb-25 min-h-screen">
       <SEO title={`مواضيع: ${tagName}`} description={`تصفح جميع المقالات والفعاليات المتعلقة بـ ${tagName}.`} />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="mb-12">
           <Link to="/news" className="text-club-purple font-bold flex items-center gap-2 mb-6 hover:gap-3 transition-all">
             <ArrowRight size={18} />
@@ -27,7 +27,7 @@ export const TagsResults = () => {
             <div className="w-12 h-12 bg-club-purple/10 rounded-2xl flex items-center justify-center text-club-purple">
               <Tag size={24} />
             </div>
-            <h1 className="text-3xl md:text-5xl font-black">
+            <h1 className="text-3xl md:text-5xl font-bold">
               وسم: <span className="text-club-purple">{tagName}</span>
             </h1>
           </div>

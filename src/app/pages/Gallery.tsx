@@ -34,12 +34,12 @@ export const Gallery = () => {
 
   return (
     <div className="pt-25 pb-25">
-      <SEO title="معرض الصور" description="جولة بصرية في رحاب النادي الثقافي العربي بالشارقة." />
-        <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white"> 
+     
+        <div className="py-10 mb-10 relative overflow-hidden text-center bg-secondary"> 
         <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10 ">
           
-          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white"> معرض الصور</h1>
-          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-black"> معرض الصور</h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed text-black">
            لحظات توثق حراكنا الثقافي وجماليات الإبداع في نادينا.
           </p>
         </div>

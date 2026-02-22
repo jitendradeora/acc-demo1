@@ -1,13 +1,16 @@
-import React from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
-import { ArrowLeft, BookOpen, Users, Star, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Sparkles, Calendar, ChevronLeft, Clock, BookOpen, Users, Star, ArrowRight, Play, X } from 'lucide-react';
 import { SectionTitle } from '../components/SectionTitle';
 import { EventCard, NewsCard } from '../components/Cards';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
 import banner from '@/assets/acc-banner-3.jpg';
-import smallbanner from '@/assets/acc-banner.jpg';
+import arabipattern from '@/assets/arabic-pattern.jpg';
+
+// Replace with your video ID for "رحلة في أروقة النادي"
+const HERO_VIDEO_ID = 'xn-_snAJKds'; // YouTube video ID – replace with actual club video
 import aboutbanner from '@/assets/acc-banner-1.jpg';
 //import about from '@/assets/about-banner.jpg';
 import newsone from '@/assets/news-1.jpg';
@@ -99,6 +102,8 @@ const newsData = [
 ];
 
 export const Home = () => {
+  const [showVideoModal, setShowVideoModal] = useState(false);
+
   return (
     <div className="flex flex-col">
       <SEO 
@@ -108,9 +113,13 @@ export const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden bg-secondary">
+
+     
+
+
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <ImageWithFallback 
-            src={banner} 
+            src={arabipattern} 
             alt="Hero Background"
             className="w-full h-full object-cover grayscale"
           />
@@ -125,38 +134,93 @@ export const Home = () => {
         {/* <img src={logo} alt="" className="w-full h-full object-contain" /> */}
       </div>
 
-        <div className="container relative z-10">
+        <div className="container max-w-7xl mx-auto relative z-10 px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-block px-4 py-1 bg-club-purple rounded-full text-sm font-bold mb-6">
+            {/* <div className="inline-block px-4 py-1 bg-club-purple rounded-full text-sm font-bold mb-6">
               مرحباً بكم في بيت المثقفين العرب
+            </div> */}
+             <div className="inline-flex items-center space-x-reverse space-x-3 px-6 py-2.5 bg-white/80 backdrop-blur-md border border-accent-purple/10 text-accent-purple rounded-full text-sm font-bold shadow-sm mb-6">
+               <Sparkles size={16} className="text-accent-purple animate-pulse" />
+              <span>نحتفي بمرور 45 عاماً من الإبداع الثقافي</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-black leading-tight mb-8">
-              النادي الثقافي العربي   <span className="text-club-blue">في الشارقة</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-secondary/80 mb-10 leading-relaxed font-light">
-              نرسخ الهوية العربية، ونحتفي بالإبداع الأدبي، ونبني جسوراً من التواصل الثقافي في قلب عاصمة الثقافة.
+            <div className="space-y-4 mb-6">
+              <h1 className="text-6xl md:text-6xl font-bold text-primary tracking-tight">
+                واحة الفكر <span className="text-accent-purple">ومحراب الأدب</span>
+              </h1>
+              <div className="w-24 h-2 bg-accent-blue rounded-full" />
+            </div>
+
+            <p className="text-xl text-primary/70 max-w-xl leading-relaxed font-medium mb-6">
+              في قلب الشارقة، يزدهر النادي الثقافي العربي كجسر يربط بين عراقة الماضي وطموح المستقبل، حيث تجتمع العقول لترسم ملامح الغد الثقافي.
             </p>
+
             <div className="flex flex-wrap gap-4">
-              <button className="bg-club-purple hover:bg-opacity-90 transition-all text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3">
+              <button className="bg-club-purple hover:bg-opacity-90 transition-all text-white px-6 py-2 rounded-xl font-bold text-md flex items-center gap-3">
                 <span>استكشف فعالياتنا</span>
                 <ArrowLeft size={20} />
               </button>
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white px-8 py-4 rounded-xl font-bold text-lg">
+              {/* <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white px-8 py-4 rounded-xl font-bold text-lg">
                 تعرف علينا
+              </button> */}
+              <button
+                type="button"
+                onClick={() => setShowVideoModal(true)}
+                className="group flex items-center px-4 py-2 font-tajawal font-bold text-primary hover:text-accent-purple transition-all cursor-pointer"
+              >
+                <div className="w-14 h-14 rounded-full border-2 border-primary/10 flex items-center justify-center bg-white shadow-lg group-hover:bg-accent-purple group-hover:border-accent group-hover:text-black transition-all duration-500">
+                  <Play size={24} fill="currentColor" />
+                </div>
+                <span className="text-lg pr-3">رحلة في أروقة النادي</span>
               </button>
+            </div>
+
+          </motion.div>
+        
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.1 }}
+            className="relative"
+          >
+            <div className="relative z-20">
+              {/* Main Image Card */}
+              <div className="relative aspect-[4/5] md:aspect-[5/6] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] border-4 border-white">
+                <ImageWithFallback 
+                  src={banner} 
+                  alt="ثقافة الشارقة"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+                
+                {/* Floating Info Badge */}
+                
+
+                <div className="absolute bottom-5 right-5 left-5 p-4 bg-white/10 backdrop-blur-md rounded-[1rem] border border-white/10">
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <span className="inline-block px-3 py-1 bg-accent-blue text-primary text-[10px] font-bold rounded-full mb-3 uppercase tracking-tighter">الحدث القادم</span>
+                      <h4 className="text-white text-2xl font-bold font-tajawal">مهرجان الشارقة للمسرح العربي</h4>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            
             </div>
           </motion.div>
         </div>
-
-        {/* Floating Decorative Elements */}
-        <div className="absolute bottom-10 left-10 hidden lg:block opacity-70">
-          <ImageWithFallback src={smallbanner} alt="Small Banner" className="w-64 h-64 rounded-full object-cover border-8 border-club-blue" />
         </div>
+
+       
       </section>
 
       {/* Stats Section */}
@@ -179,7 +243,7 @@ export const Home = () => {
 
       {/* About Preview */}
       <section className="bg-white py-24 md:px-6 ">
-      <div className="container max-w-7xl mx-auto ">
+      <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2 relative">
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
@@ -247,7 +311,7 @@ export const Home = () => {
         </div>
         <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">الشارقة: عاصمة عالمية للثقافة والكتاب</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">الشارقة: عاصمة عالمية للثقافة والكتاب</h2>
             <p className="text-xl text-secondary/70 mb-12 leading-relaxed">
               تستمد الشارقة قوتها من رؤية صاحب السمو الشيخ الدكتور سلطان بن محمد القاسمي، الذي جعل من الثقافة ركيزة أساسية للتنمية البشرية، ونحن في النادي الثقافي العربي نفخر بأن نكون جزءاً من هذا المشروع الحضاري الكبير.
             </p>
@@ -310,9 +374,38 @@ export const Home = () => {
                 </div>
               </div>
             </section>
-   
 
-  
+      {/* Video modal – "رحلة في أروقة النادي" */}
+      {showVideoModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setShowVideoModal(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="فيديو: رحلة في أروقة النادي"
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setShowVideoModal(false)}
+              className="absolute top-4 left-4 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+              aria-label="إغلاق"
+            >
+              <X size={24} />
+            </button>
+            <iframe
+              title="رحلة في أروقة النادي"
+              src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1`}
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

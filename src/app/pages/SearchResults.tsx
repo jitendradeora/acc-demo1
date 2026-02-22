@@ -32,7 +32,7 @@ export const SearchResults = () => {
             <ArrowRight size={18} />
             العودة للرئيسية
           </Link>
-          <h1 className="text-3xl md:text-5xl font-black mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
             نتائج البحث عن: <span className="text-club-purple">"{query}"</span>
           </h1>
           <p className="text-muted-foreground">تم العثور على {results.length} نتيجة</p>

@@ -39,10 +39,10 @@ export const News = () => {
      
 
 
-       <div className="bg-primary text-white py-10 mb-10 relative overflow-hidden text-center">
+       <div className="bg-secondary py-10 mb-10 relative overflow-hidden text-center">
         <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">   المركز الإعلامي </h1>
-          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-black">   المركز الإعلامي </h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed text-black">
             نافذتكم على أنشطة النادي، وتقاريرنا الثقافية، وإصداراتنا الأدبية المتنوعة.
           </p>
         </div>        

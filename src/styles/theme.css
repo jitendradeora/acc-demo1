@@ -26,12 +26,12 @@
   --font-weight-normal: 400;
   --ring: #522387;
   --radius: 0.625rem;
-  
   /* Custom colors */
   --club-purple: #522387;
   --club-blue: #8BCCEA;
   --club-beige: #E4E1DA;
-  
+  --accent-purple-bg:  #dcd8d6;
+  --accent-blue-bg: #dfe0db;  
   --font-family: 'Tajawal', sans-serif;
 }
 
@@ -78,6 +78,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --border-accent-purple: var(--accent-purple-border);
 }
 
 @layer base {
@@ -98,4 +99,18 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
+}
+
+
+.border-accent-purple {
+  border-color: var(--club-purple);
+}
+.border-accent-blue {
+  border-color: var(--club-blue);
+}
+.bg-accent-purple {
+  background-color: var(--accent-purple-bg);
+}
+.bg-accent-blue {
+  background-color: var(--accent-blue-bg);
 }

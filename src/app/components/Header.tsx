@@ -49,7 +49,7 @@ export const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-4'}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500  ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-4'}`}
       >
         <div className="container max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           
@@ -61,27 +61,29 @@ export const Header = () => {
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-reverse space-x-1 gap-x-4">
+          <nav className="hidden lg:flex items-center space-x-reverse space-x-1 gap-x-2 justify-center">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) => 
                   `px-4 py-2 font-tajawal text-lg font-medium transition-all relative group overflow-hidden rounded-lg ${
-                    isActive ? 'text-accent-purple bg-accent-purple/5' : 'text-primary/70 hover:text-accent-purple hover:bg-white/50'
+                    isActive ? 'text-accent-purple bg-accent-purple' : 'text-primary/70 hover:text-accent-purple hover:bg-white/50'
                   }`
                 }
               >
                 {link.title}
               </NavLink>
             ))}
-            <button 
+            
+          </nav>
+
+          <button 
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 transition-colors cursor-pointer text-black hover:text-club-purple"
+              className="p-2 transition-colors cursor-pointer text-black hover:text-club-purple hidden lg:block"
             >
               <Search size={20} />
             </button>
-          </nav>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-4">
@@ -200,7 +202,7 @@ export const Header = () => {
                   autoFocus
                   type="text" 
                   placeholder="ما الذي تبحث عنه؟..." 
-                  className="w-full bg-transparent border-b-4 border-white/20 pb-4 text-3xl md:text-5xl font-black text-white placeholder:text-white/20 focus:outline-none focus:border-club-purple transition-all"
+                  className="w-full bg-transparent border-b-4 border-white/20 pb-4 text-3xl md:text-5xl font-bold text-white placeholder:text-white/20 focus:outline-none focus:border-club-purple transition-all"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />

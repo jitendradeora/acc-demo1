@@ -25,10 +25,10 @@ export const About = () => {
       <SEO title="نبذة عنا" description="تعرف على رسالة ورؤية وأهداف النادي الثقافي العربي في الشارقة." />
       
       {/* Hero Banner */}
-      <div className="py-10 mb-10 relative overflow-hidden text-center bg-primary text-white">
+      <div className="py-10 mb-10 relative overflow-hidden text-center">
         <div className="container max-w-2xl mx-auto px-4 md:px-6 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-white">من نحن</h1>
-          <p className="text-x2 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4 text-black">من نحن</h1>
+          <p className="text-x2 max-w-2xl mx-auto leading-relaxed text-black">
             النادي الثقافي العربي في الشارقة هو بيت المبدعين ومنارة الفكر، تأسس ليكون جسراً يربط بين عراقة الماضي وإبداع المستقبل.
           </p>
         </div>        
@@ -46,7 +46,7 @@ export const About = () => {
             <div className="w-16 h-16 bg-club-purple/10 rounded-2xl flex items-center justify-center text-club-purple mb-8">
               <Target size={32} />
             </div>
-            <h2 className="text-3xl font-black mb-6 text-primary">رسالتنا</h2>
+            <h2 className="text-3xl font-bold mb-6 text-primary">رسالتنا</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               تتمثل رسالتنا في خلق بيئة محفزة للإبداع والابتكار الثقافي، من خلال تنظيم فعاليات وبرامج نوعية تعزز حضور اللغة العربية والأدب والفكر العربي في المجتمع، وتساهم في بناء جيل مثقف وواعٍ بهويته.
             </p>
@@ -62,7 +62,7 @@ export const About = () => {
             <div className="w-16 h-16 bg-club-blue/10 rounded-2xl flex items-center justify-center text-club-blue mb-8">
               <Eye size={32} />
             </div>
-            <h2 className="text-3xl font-black mb-6 text-primary">رؤيتنا</h2>
+            <h2 className="text-3xl font-bold mb-6 text-primary">رؤيتنا</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               نتطلع إلى أن نكون المؤسسة الثقافية الرائدة عربياً وعالمياً في تعزيز الحوار الثقافي الإنساني، وأن تظل الشارقة وجهة لكل مثقف وباحث عن المعرفة والإبداع الأصيل.
             </p>
@@ -71,7 +71,12 @@ export const About = () => {
 
         {/* Core Values */}
         <section className="mb-24">
-          <SectionTitle title="قيمنا الجوهرية" centered />
+          {/* <SectionTitle title="قيمنا الجوهرية" centered /> */}
+          <div className="text-center mb-12">  
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 relative inline-block text-center">قيمنا الجوهرية 
+              <span className="absolute -bottom-2 right-0 w-16 h-1 bg-club-purple rounded-full"></span>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {values.map((value, i) => (
               <motion.div 
@@ -85,11 +90,21 @@ export const About = () => {
               </motion.div>
             ))}
           </div>
+
+        
         </section>
 
         {/* Board Members */}
         <section className="mb-24">
-          <SectionTitle title="مجلس الإدارة" subtitle="نخبة من القامات الثقافية والأدبية التي تقود مسيرة النادي." centered />
+           
+          <div className="text-center mb-12">  
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 relative inline-block text-center"> مجلس الإدارة   
+              <span className="absolute -bottom-2 right-0 w-16 h-1 bg-club-purple rounded-full"></span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">نخبة من القامات الثقافية والأدبية التي تقود مسيرة النادي.</p>
+          </div>
+
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-16">
             {boardMembers.map((member, i) => (
               <div key={i} className="text-center group">
@@ -101,7 +116,7 @@ export const About = () => {
                     className="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10"
                   />
                 </div>
-                <h3 className="text-xl font-black mb-1">{member.name}</h3>
+                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-club-purple font-medium text-sm">{member.role}</p>
               </div>
             ))}
